@@ -1,5 +1,4 @@
-:root{--WindowDraggingFromNewtabButton: no-drag}  /*  For windows  *//*
-:root{--WindowDraggingFromNewtabButton: drag !important}  /* For linux */
+:root{--WindowDraggingFromNewtabButton: drag !important}  /* Make new tab button draggable */
 
 /*  #reload-button, #stop-button{display:none !important}  /*  Removes the reload/stop button  */
 
