@@ -1,8 +1,8 @@
 :root{--WindowDraggingFromNewtabButton: drag !important}  /* Make new tab button draggable */
 
-/*  #reload-button, #stop-button{display:none !important}  /*  Removes the reload/stop button  */
+#reload-button{display:none !important}  /*  Removes the reload button  */
 
-/*  #back-button, #forward-button{display: none !important}  /*  Removes the forward/back button  */
+#back-button, #forward-button{display: none !important}  /*  Removes the forward/back button  */
 
 /*  .tab-close-button{display: none !important}  /*  Removes the x-button from the tabs  */
 
