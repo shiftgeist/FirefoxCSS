@@ -190,3 +190,15 @@ html.theme-dark body div#root div#app header#toolbar.user-agent .devtools-separa
 #scrollbutton-down {
   display: none;
 }
+
+/* Macos custom Bali10050/FirefoxCSS#6 */
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){ /* thanks to https://www.reddit.com/r/FirefoxCSS/comments/lkk6wb/css_selector_for_differentiating_between_windows/gnkeefk/ */
+  @media screen and (min-width: 849px) {
+    #nav-bar {
+      left: 72px !important;
+    }
+  }
+  #tabbrowser-tabs {
+    padding-left: 72px !important;
+  }
+}
