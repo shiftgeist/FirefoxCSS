@@ -202,3 +202,8 @@ html.theme-dark body div#root div#app header#toolbar.user-agent .devtools-separa
     padding-left: 72px !important;
   }
 }
+
+/* Make padding around tab close button more dense */
+:root {
+  -inline-tab-padding: 4px 0 8px !important; /* Default: 8px */
+}
