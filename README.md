@@ -18,3 +18,11 @@
 ## Suggested Addons
 
 - [Adaptive Tab Bar Color](https://addons.mozilla.org/en-US/firefox/addon/adaptive-tab-bar-colour/) [Source](https://github.com/easonwong-de/Adaptive-Tab-Bar-Colour)
+
+## Development
+
+Apply theme
+
+```sh
+cp -r chrome user.js /path/to/firefox/profile.default
+```
