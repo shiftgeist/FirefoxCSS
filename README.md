@@ -28,3 +28,7 @@ Apply theme
 ```sh
 cp -r chrome user.js /path/to/firefox/profile.default
 ```
+
+Open Browser Debugger (after enabling)
+
+- Windows: `CTRL` + `SHIFT` + `WIN` + `I`
