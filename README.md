@@ -1,5 +1,7 @@
 # FirefoxCSS Theme
 
+Firefox version 124.0b6
+
 [Preview](./.assets/Screenshot_2024-02-07.png)
 
 > Based on [Bali10050/FirefoxCSS](https://github.com/Bali10050/FirefoxCSS) and [kndshein/ffocuss](https://github.com/kndshein/ffocuss)

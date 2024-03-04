@@ -18,10 +18,10 @@
 --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */}
 
 @media screen and (min-width:1325px)    /*  Only the tabs space will grow from here  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important} #nav-bar{margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important}}
+{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar .toolbar-items{margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important} #nav-bar{margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important}}
 
 @media screen and (min-width:850px) and (max-width:1324px)    /*  Both the tabs space and the navbar will grow  */
-{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar .toolbar-items{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
 
 @media screen and (max-width:849px)    /*  The window is not enough wide for a one line layout  */
 {:root #nav-bar{padding: 0 5px 0 5px!important; height: calc(var(--NavbarHeightSmall) * 1px) !important} toolbarspring{display: none !important;} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
@@ -67,12 +67,6 @@
 
 /*  Removes annoying border  */
 #navigator-toolbox{border:none !important;}
-
-/*  Titlebar button fix#6322  */
-.titlebar-buttonbox-container{-moz-box-ordinal-group: auto;}
-.titlebar-button > .toolbarbutton-icon:-moz-lwtheme{-moz-context-properties: fill, stroke !important;}
-.titlebar-button > .toolbarbutton-icon {display: flex !important; height:unset !important; width: unset !important;}
-.titlebar-buttonbox{appearance: none !important}
 
 /*  Titlebar buttons  -  Minimize button  */
 .titlebar-min {fill: var(--toolbarbutton-icon-fill) !important; -moz-context-properties: fill !important; list-style-image: url("data:image/svg+xml,%3Csvg width='40' height='30' version='1.1' viewBox='0 0 40 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EVetro%3C/title%3E%3Crect transform='matrix(3.7795 0 0 3.7795 -39.998 -533.51)' x='14.552' y='145.13' width='2.6458' height='.26458' ry='3.1658e-6' fill='context-fill' style='paint-order:stroke fill markers'/%3E%3C/svg%3E%0A")!important;  border-radius: 0!important; margin: 0!important; padding: 0!important; border: 0!important; height: 100%!important; align-content: center!important; width: 56px!important; appearance: none!important}.titlebar-min:hover {background-color: color-mix(in srgb,currentColor 17%,transparent)!important}.titlebar-min:active {background-color: color-mix(in srgb,currentColor 30%,transparent)!important}
@@ -177,30 +171,17 @@ html.theme-dark body div#root div#app header#toolbar.user-agent{background: -moz
 html.theme-dark body div#root div#app header#toolbar.user-agent *{border-radius: 7px !important;}
 html.theme-dark body div#root div#app header#toolbar.user-agent .devtools-separator{opacity:0 !important}
 
-/*  Changes for macos compatibility  */
-.titlebar-button { display: flex !important; }
-.titlebar-buttonbox-container{ order: 1 !important; }
-.titlebar-buttonbox{ height: 100% !important; }
-:root:not([sizemode="maximized"], [sizemode="fullscreen"]) .titlebar-restore, :root:is([sizemode="maximized"], [sizemode="fullscreen"]) .titlebar-max{display: none !important;}
-.titlebar-buttonbox { margin-inline: 0 !important; }
-.titlebar-buttonbox-container{margin-bottom: 0px;}
-
 /* Hide scroll left/right icon */
 #scrollbutton-up,
 #scrollbutton-down {
   display: none;
 }
 
-/* Macos custom Bali10050/FirefoxCSS#6 */
+/* Macos system buttons Bali10050/FirefoxCSS#6 */
 /* From https://stackoverflow.com/a/49595039 */
-@supports (-moz-osx-font-smoothing: auto) {
-  @media screen and (min-width: 849px) {
-    #nav-bar {
-      left: 72px !important;
-    }
-  }
-  #tabbrowser-tabs {
-    padding-left: 72px !important;
+@media (-moz-platform: macos) and (min-width: 849px)  {
+  #nav-bar {
+    left: 72px !important;
   }
 }
 
